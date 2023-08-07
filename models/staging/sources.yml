@@ -1,0 +1,126 @@
+sources:
+  - name: sap
+    schema: sap_adw
+    description: Fonte de dados da Adventure Works.
+    tables:
+      - name: salesorderheader
+        description: Tabela de vendas da Adventure Works.
+        columns: 
+          - name: salesorderid
+            tests:
+              - unique
+              - not_null
+          
+      - name: salesorderdetail
+        description: Tabela com os produtos e outros detalhes de cada venda da Adventure Works.
+        columns:
+          - name: salesorderdetailid
+            tests:
+              - unique
+              - not_null
+          
+      - name: employee
+        description: Tabela de funcionários da Adventure Works.
+        columns:
+          - name: businessentityid
+            tests:
+              - unique
+              - not_null
+          
+      - name: product
+        description: Tabela de produtos da Adventure Works.
+        columns:
+          - name: productid
+            tests:
+              - unique
+              - not_null
+          
+      - name: creditcard
+        description: Tabela com informações do catão de crédito.
+        columns:
+          - name: creditcardid
+            tests:
+              - unique
+              - not_null
+          
+      - name: salesreason
+        description: Tabela com a explicação da venda.
+        columns: 
+          - name: salesreason
+            tests:
+              - unique
+              - not_null
+          
+      - name: person
+        description: Tabela com informações pessoais.
+        columns: 
+          - name: businessentityid
+            tests:
+              - unique
+              - not_null
+          
+      - name: customer
+        description: Tabela de clientes da Adventure Works.
+        columns:
+          - name: customerid
+            tests:
+              - unique
+              - not_null
+          
+      - name: address
+        description: Tabela com endereços.
+        columns:
+          - name: addressid
+            tests:
+              - unique
+              - not_null
+          
+      - name: stateprovince
+        description: Tabela com os estados.
+        columns:
+          - name: stateprovinceid
+            tests:
+              - unique
+              - not_null
+          
+      - name: countryregion
+        description: Tabela com os países.
+        columns:
+          - name: stateprovinceid
+            tests:
+              - unique
+              - not_null
+          
+      - name: salesperson
+        description: Tabela com os vendedores da Adventure Works.
+        columns: 
+          - name: businessentityid
+            tests:
+              - unique
+              - not_null
+          
+      - name: specialoffer
+        description: Tabela com as promoções realizadas na Adventure Works.
+        columns:
+          - name: specialofferid
+            tests:
+              - unique
+              - not_null
+          
+      - name: currencyrate
+        description: Tabela com as taxas de cambio da Adventure Works.
+        columns:
+          - name: currencyrateid
+            tests:
+              - unique
+              - not_null
+          
+      - name: store
+        description: Tabela com as lojas da Adventure Works.
+        columns:
+          - name: businessentityid
+            tests:
+              - unique
+              - not_null
+          
+
