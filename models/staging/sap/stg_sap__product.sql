@@ -21,8 +21,8 @@ with
             , cast(productmodelid as int) as productmodelid
             , cast(date(sellstartdate) as date) as sellstartdate
             , cast(date(sellenddate) as date) as sellenddate
-            , cast(discontinueddate as bool) as discontinueddate
             , cast(date(modifieddate) as date) as modifieddate
+            -- discontinueddate (todos os valores são vazios)
             -- rowguid,
             -- productline,
             -- size,
@@ -36,3 +36,4 @@ with
 
 select *
 from renamed
+where discontinueddate is not null
