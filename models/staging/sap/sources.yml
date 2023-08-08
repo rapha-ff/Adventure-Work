@@ -46,7 +46,7 @@ sources:
       - name: salesreason
         description: Tabela com a explicação da venda.
         columns: 
-          - name: salesreason
+          - name: salesreasonid
             tests:
               - unique
               - not_null
@@ -86,7 +86,7 @@ sources:
       - name: countryregion
         description: Tabela com os países.
         columns:
-          - name: stateprovinceid
+          - name: countryregioncode
             tests:
               - unique
               - not_null
@@ -142,7 +142,7 @@ sources:
       - name: specialofferproduct
         description: Tabela ponte entre salesorderdetail e specialoffer.
         columns:
-          - name: productcategoryid
+          - name: specialofferid
             tests:
               - not_null
           
