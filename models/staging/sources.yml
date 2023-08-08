@@ -122,5 +122,28 @@ sources:
             tests:
               - unique
               - not_null
+      
+      - name: productsubcategory
+        description: Tabela com as subcategorias dos produtos da Adventure Works.
+        columns:
+          - name: productsubcategoryid
+            tests:
+              - unique
+              - not_null
+                    
+      - name: productcategory
+        description: Tabela com as categorias dos produtos da Adventure Works.
+        columns:
+          - name: productcategoryid
+            tests:
+              - unique
+              - not_null
+
+      - name: specialofferproduct
+        description: Tabela ponte entre salesorderdetail e specialoffer.
+        columns:
+          - name: productcategoryid
+            tests:
+              - not_null
           
 

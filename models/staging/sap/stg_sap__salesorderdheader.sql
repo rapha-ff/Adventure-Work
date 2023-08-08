@@ -2,9 +2,9 @@ with
     source_salesorderheader as (
         select * 
         from {{ source('sap', 'salesorderheader') }}
-    ),
+    )
 
-    renamed as (
+    , renamed as (
         select 
             cast(salesorderid as int) as salesorderid
             , cast(date(orderdate) as date) as orderdate
