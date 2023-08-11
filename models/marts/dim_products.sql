@@ -19,15 +19,14 @@ with
 
     , last_modifieddate as (
         select
-            products.modifieddate as modifieddate_products
-            , productsubcategory.modifieddate as modifieddate_subcategory
-            , productcategory.modifieddate as modifieddate_category
+            max(products.modifieddate) as modifieddate_products
+            , max(productsubcategory.modifieddate) as modifieddate_subcategory
+            , max(productcategory.modifieddate) as modifieddate_category
         from products
         left join productsubcategory
         using (productsubcategoryid)
         left join productcategory
         using (productcategoryid)
-        group by 1,2,3
     )
 
     , join_product as (
@@ -85,4 +84,4 @@ with
     )
 
 select *
-from replace_null
+from join_product

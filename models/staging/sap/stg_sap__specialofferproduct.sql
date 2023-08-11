@@ -7,7 +7,7 @@ source_specialofferproduct as (
 , renamed as (
     select
         cast(specialofferid as int) as specialofferid
-        , cast(productid as int) as productid        
+        , cast(productid as int) as productid
         , cast(date(modifieddate) as date) as modifieddate
         -- rowguid,
     from source_specialofferproduct

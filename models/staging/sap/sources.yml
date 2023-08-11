@@ -145,5 +145,12 @@ sources:
           - name: specialofferid
             tests:
               - not_null
+
+      - name: salesorderheadersalesreason
+        description: Tabela ponte entre salesorderheader e salesreason.
+        columns:
+          - name: salesorderid
+            tests:
+              - not_null
           
 

@@ -11,7 +11,7 @@ with
             , cast(date(duedate) as date) as duedate
             , cast(date(shipdate) as date) as shipdate
             , cast(status as int) as status
-            , cast(onlineorderflag as bool) as onlineorderflag
+            , cast(onlineorderflag as bool) as is_orderonline
             , cast(customerid as int) as customerid
             , cast(salespersonid as int) as salespersonid
             , cast(territoryid as int) as territoryid
