@@ -11,7 +11,7 @@ with
 
     , join_bridge as (
         select 
-            {{ dbt_utils.generate_surrogate_key(['salesorderheadersalesreason.salesorderid', 'salesorderdetail.productid']) }}
+            {{ dbt_utils.generate_surrogate_key(['salesorderheadersalesreason.salesorderid', 'salesorderdetail.productid']) }} as hash_salesorderid_productid
             , salesorderheadersalesreason.salesorderid
             , salesorderdetail.productid
             , salesorderheadersalesreason.salesreasonid
