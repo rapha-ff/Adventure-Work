@@ -84,4 +84,4 @@ with
     )
 
 select *
-from join_product
+from replace_null

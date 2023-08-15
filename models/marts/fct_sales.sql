@@ -42,7 +42,7 @@ with
             , salesorderheader.shiptoaddressid
             , salesorderheader.shipmethodid
             , salesorderheader.creditcardid
-            , creditcard.CardType
+            , creditcard.CardType as CardType_with_null
             , salesorderheader.currencyrateid
             , salesorderheader.subtotal
             , salesorderheader.taxamt
@@ -79,8 +79,9 @@ with
         , (unitprice * orderqty * unitpricediscount) as total_discount
         , round((freight/(count(*) over(partition by salesorderid))),2) as freight_per_product
         , round((taxamt/(count(*) over(partition by salesorderid))),2) as taxamt_per_product
-        , (unitprice + round((freight/(count(*) over(partition by salesorderid))),2) + round((taxamt/(count(*) over(partition by salesorderid))),2)) as unit_price_with_freight_tax
-        from join_sales
+        , round((unitprice * orderqty * (1-unitpricediscount)) + (freight/(count(*) over(partition by salesorderid))) + (taxamt/(count(*) over(partition by salesorderid))),2) as totaldue_per_product
+        , coalesce(CardType_with_null,'Uninformed') as Cardtype
+        from join_sales     
     )
 
     , final as (
@@ -101,10 +102,11 @@ with
             , unitpricediscount
             , gross_income
             , net_income
+
             , total_discount
             , freight_per_product
             , taxamt_per_product
-            , unit_price_with_freight_tax
+            , totaldue_per_product
             , time_to_ship
             , shipped_to_required
             , order_to_required  
@@ -116,7 +118,7 @@ with
             
             , status
             , shipmethodid as shipmethod
-            , creditcardid as creditcard
+            , creditcardid
             , CardType
             , is_orderonline
         from metrics
