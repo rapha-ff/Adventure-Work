@@ -36,4 +36,3 @@ with
 
 select *
 from renamed
-where discontinueddate is not null

@@ -1,0 +1,18 @@
+with 
+    dates as (
+        select 
+        date_day
+        , day_of_week
+        , day_of_week_name
+        , day_of_month
+        , day_of_year
+        , week_of_year
+        , month_of_year
+        , month_name
+        , quarter_of_year
+        , year_number
+        from {{ ref('stg_dates') }}
+    )
+
+select *
+from dates

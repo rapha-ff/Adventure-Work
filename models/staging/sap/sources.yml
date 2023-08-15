@@ -139,10 +139,10 @@ sources:
               - unique
               - not_null
 
-      - name: specialofferproduct
-        description: Tabela ponte entre salesorderdetail e specialoffer.
+      - name: salesorderheadersalesreason
+        description: Tabela ponte entre salesorderheader e salesreason.
         columns:
-          - name: specialofferid
+          - name: salesorderid
             tests:
               - not_null
           
