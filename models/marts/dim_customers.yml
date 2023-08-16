@@ -1,0 +1,15 @@
+version: 2
+
+models:
+  - name: dim_customers
+    description: Dimensão de clientes da Adventure Works.
+    columns:     
+      - name: personid
+        description: Chave única que caracteriza o cliente pessoa física. Quando esse campo é nulo obrigatoriamente a coluna storeid é não nula.
+        tests:
+          - unique
+      
+      - name: storeid
+        description: Chave única que caracteriza o cliente pessoa juridica. Quando esse campo é nulo obrigatoriamente a coluna storeid é não nula.
+        tests:
+          - unique

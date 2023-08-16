@@ -46,5 +46,25 @@ with
         on customers.storeid = stores.businessentityid
     )
 
+    , metrics as (
+        select
+        *
+        , case  when persontype = 'SC' then 'Store Contact'
+                when persontype = 'IN' then 'Individual (retail) customer'
+                when persontype = 'SP' then 'Sales person'
+                when persontype = 'EM' then 'Employee (non-sales)'
+                when persontype = 'VC' then 'Vendor contact'
+                when persontype = 'GC' then 'General contact'
+                else 'store' end as customer_type
+        , case  when persontype = 'SC' then store_name
+                when persontype = 'IN' then fullname
+                when persontype = 'SP' then fullname
+                when persontype = 'EM' then fullname
+                when persontype = 'VC' then fullname
+                when persontype = 'GC' then fullname
+                else store_name end as final_customer
+        from join_customers
+    )
+
 select *
-from join_customers
+from metrics

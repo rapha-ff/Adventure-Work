@@ -4,9 +4,9 @@ with
         from {{ ref('stg_sap__salesorderheadersalesreason') }}
     )
 
-    , salesorderdetail as (
+    , salesorderheader as (
         select *
-        from {{ ref('stg_sap__salesorderdetail') }}
+        from {{ ref('stg_sap__salesorderdheader') }}
     )
 
     , salesreason as (
@@ -16,18 +16,24 @@ with
 
     , join_reason as (
         select 
-            {{ dbt_utils.generate_surrogate_key(['salesorderheadersalesreason.salesorderid', 'salesorderdetail.productid']) }} as hash_salesorderid_productid
-            , salesorderheadersalesreason.salesorderid
-            , salesorderdetail.productid            
+            salesorderheadersalesreason.salesorderid           
             , salesreason.name as salesreason
             , salesreason.reasontype as salesreason_type
             , salesorderheadersalesreason.modifieddate
         from salesorderheadersalesreason
-        left join salesorderdetail
-        using (salesorderid)
         left join salesreason
         using (salesreasonid)
     )
 
+    , concat_reason as (
+        select
+            salesorderid
+            , STRING_AGG(distinct(salesreason), ', ') AS salesreason_concat
+            , STRING_AGG(distinct(salesreason_type), ', ') AS salesreason_type_concat
+        from join_reason
+        group by salesorderid
+
+    )
+
 select *
-from join_reason
+from concat_reason
