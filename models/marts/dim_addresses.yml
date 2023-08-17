@@ -1,0 +1,70 @@
+version: 2
+
+models:
+  - name: dim_addresses
+    description: Dimensão de endereços dos clientes da Adventure Works.
+    columns:                    
+      - name: addressid
+        description: Chave única do endereço.
+        tests:
+          - unique
+          - not_null
+          
+      - name: territoryid
+        description: Chave única do território.
+        tests:
+          - unique
+          - not_null
+          
+      - name: addressline1
+        description: Primeiro endereço.
+        tests:
+          - not_null
+          
+      - name: addressline2
+        description: Segundo endereço.
+          
+      - name: city
+        description: Nome da cidade.
+        tests:
+          - not_null
+          
+      - name: postalcode
+        description: Código postal.
+        tests:
+          - not_null
+          
+      - name: stateprovincecode
+        description: Cógido do estado.
+        tests:
+          - unique
+          - not_null
+          
+      - name: province_name
+        description: Nome do estado.
+        tests:
+          - unique
+          - not_null
+          
+      - name: countryregioncode
+        description: Cógido do país.
+        tests:
+          - unique
+          - not_null
+          
+      - name: country_name
+        description: Nome do país.
+        tests:
+          - unique
+          - not_null
+          
+      - name: isonlystateprovinceflag
+        description: Estabelece se o cógigo da provicia existe (0) ou se não existe e está utilizando o cógigo do continente (1).
+        tests:
+          - not_null
+          
+      - name: last_modifieddate
+        description: Data da última modificação.
+        tests:
+          - not_null
+          
