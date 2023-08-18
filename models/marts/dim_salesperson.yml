@@ -4,93 +4,86 @@ models:
   - name: dim_salesperson
     description: Dimensão dos vendedores da Adventure Works.
     columns:     
-      - name: name
-        description: Nome do produto.
+      - name: businessentityid
+        description: Chave única que caracteriza os vendedores.
         tests:
           - unique
           - not_null
-
-
-- name: businessentityid
-  description: Chave única que caracteriza os vendedores.
-  tests:
-    - unique
-    - not_null
-    
-- name: territoryid
-  description: Chave que caracteriza o territorio onde o vendedor atua.
-    
-- name: salesquota
-  description: Projeção anual de vendas.
-    
-- name: bonus
-  description: Bonus caso a projeção anual de vendas seja atingida.
-  tests:
-    - not_null
-    
-- name: commissionpct
-  description: Comissão em percentual recebida por venda.
-  tests:
-    - not_null
-    
-- name: salesytd
-  description: Valor total das vendas no ano até a data atual.
-  tests:
-    - not_null
-    
-- name: saleslastyear
-  description: Valor total das vendas do ano anterior.
-  tests:
-    - not_null
-    
-- name: jobtitle
-  description: Título do cargo.
-  tests:
-    - not_null
-    
-- name: birthdate
-  description: Data de nascimento.
-  tests:
-    - not_null
-    
-- name: maritalstatus
-  description: Estado civil, sendo (M) para caso e (S) para solteiro.
-  tests:
-    - not_null
-    
-- name: gender
-  description: Gênero, sendo (M) para masculino e (F) para feminino
-  tests:
-    - not_null
-    
-- name: hiredate
-  description: Data de contratação.
-  tests:
-    - not_null
-    
-- name: salariedflag
-  description: Classificação da remuneração.
-  tests:
-    - unique
-    - not_null
-    
-- name: vacationhours
-  description: Número de horas disponíveis para férias.
-  tests:
-    - not_null
-    
-- name: sickleavehours
-  description: Número de horas disponíveis para licença médica. 
-  tests:
-    - not_null
-    
-- name: currentflag
-  description: Categoria do funcionário, sendo (0) para inativo e (1) para ativo.
-  tests:
-    - not_null
-    
-- name: last_modifieddate
-  description: Data da última modificação.
-  tests:
-    - not_null
-    
+          
+      - name: territoryid
+        description: Chave que caracteriza o territorio onde o vendedor atua.
+          
+      - name: salesquota
+        description: Projeção anual de vendas.
+          
+      - name: bonus
+        description: Bonus caso a projeção anual de vendas seja atingida.
+        tests:
+          - not_null
+          
+      - name: commissionpct
+        description: Comissão em percentual recebida por venda.
+        tests:
+          - not_null
+          
+      - name: salesytd
+        description: Valor total das vendas no ano até a data atual.
+        tests:
+          - not_null
+          
+      - name: saleslastyear
+        description: Valor total das vendas do ano anterior.
+        tests:
+          - not_null
+          
+      - name: jobtitle
+        description: Título do cargo.
+        tests:
+          - not_null
+          
+      - name: birthdate
+        description: Data de nascimento.
+        tests:
+          - not_null
+          
+      - name: maritalstatus
+        description: Estado civil, sendo (M) para caso e (S) para solteiro.
+        tests:
+          - not_null
+          
+      - name: gender
+        description: Gênero, sendo (M) para masculino e (F) para feminino
+        tests:
+          - not_null
+          
+      - name: hiredate
+        description: Data de contratação.
+        tests:
+          - not_null
+          
+      - name: salariedflag
+        description: Classificação da remuneração.
+        tests:
+          - unique
+          - not_null
+          
+      - name: vacationhours
+        description: Número de horas disponíveis para férias.
+        tests:
+          - not_null
+          
+      - name: sickleavehours
+        description: Número de horas disponíveis para licença médica. 
+        tests:
+          - not_null
+          
+      - name: currentflag
+        description: Categoria do funcionário, sendo (0) para inativo e (1) para ativo.
+        tests:
+          - not_null
+          
+      - name: last_modifieddate
+        description: Data da última modificação.
+        tests:
+          - not_null
+          

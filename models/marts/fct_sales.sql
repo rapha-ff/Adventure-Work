@@ -90,12 +90,12 @@ with
             , productid as fk_product
             , customerid as fk_customer
             , salespersonid as fk_salesperson
-            , territoryid as fk_territory
             , billtoaddressid as fk_billtoaddress
-            , shiptoaddressid as fk_shiptoaddress
-            , currencyrateid as fk_currencyrate            
+            , currencyrateid as fk_currencyrate
             , specialofferid as fk_specialoffer
             , salesorderid
+            , territoryid
+            , shiptoaddressid
 
             , orderqty
             , unitprice
@@ -109,7 +109,7 @@ with
             , totaldue_per_product
             , time_to_ship
             , shipped_to_required
-            , order_to_required  
+            , order_to_required
 
             , orderdate
             , duedate

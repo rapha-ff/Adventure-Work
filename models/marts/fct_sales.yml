@@ -1,0 +1,160 @@
+version: 2
+
+models:
+  - name: fct_sales
+    description: Tabela fato das vendas da Adventure Works.
+    columns:     
+      - name: sk_sales
+        description: Surrogate key da tabela fato.
+        tests:
+          - not_null
+
+      - name: fk_product
+        description: Chave estrangeira da dimensção de produtos.
+        tests:
+          - not_null
+
+      - name: fk_customer
+        description: Chave estrangeira da dimensção de clientes.
+        tests:
+          - not_null
+
+      - name: fk_salesperson
+        description: Chave estrangeira da dimensção de vendedores.
+        tests:
+          - not_null
+
+      - name: fk_billtoaddress
+        description: Chave estrangeira da dimensção de endereços.
+        tests:
+          - not_null
+
+      - name: fk_currencyrate
+        description: Chave estrangeira da dimensção de câmbio.
+        tests:
+          - not_null
+
+      - name: fk_specialoffer
+        description: Chave estrangeira da dimensção de ofertas.
+        tests:
+          - not_null
+
+      - name: salesorderid
+        description: Identificador do pedido.
+        tests:
+          - not_null
+
+      - name: territoryid
+        description: Identificador do territorio que o pedido foi contabilizado.
+        tests:
+          - not_null
+
+      - name: shiptoaddressid
+        description: Identificador do endereço de entrega do pedido.
+        tests:
+          - not_null
+
+      - name: orderqty
+        description: 	Quantidade encomendada do produto.
+        tests:
+          - not_null
+
+      - name: unitprice
+        description: 	Preço de venda de um único produto.
+        tests:
+          - not_null
+
+      - name: unitpricediscount
+        description: Valor do desconto.
+        tests:
+          - not_null
+
+      - name: gross_income
+        description: Faturamento bruto.
+        tests:
+          - not_null
+
+      - name: net_income
+        description: Faturamento líquido.
+        tests:
+          - not_null
+
+      - name: total_discount
+        description: Desconto total.
+        tests:
+          - not_null
+
+      - name: freight_per_product
+        description: Valor do frete por produto.
+        tests:
+          - not_null
+
+      - name: taxamt_per_product
+        description: Valor dos impostos por produto.
+        tests:
+          - not_null
+
+      - name: totaldue_per_product
+        description: Valor total recebido por produto, incluso taxa e frete. 
+        tests:
+          - not_null
+
+      - name: time_to_ship
+        description: Tempo entre o recebimento do pedido até o embarque.
+        tests:
+          - not_null
+
+      - name: shipped_to_required
+        description: Tempo entre o embarque até o prazo do pedido.
+        tests:
+          - not_null
+
+      - name: order_to_required
+        description: Tempo entre o recebimento do pedido até o prazo do pedido.
+        tests:
+          - not_null
+
+      - name: orderdate
+        description: Data em que o pedido foi recebido.
+        tests:
+          - not_null
+
+      - name: duedate
+        description: Data em que o cliente deseja o produto.
+        tests:
+          - not_null
+
+      - name: shipdate
+        description: Data em que o pedido foi enviado ao cliente.
+        tests:
+          - not_null
+
+      - name: last_modifieddate
+        description: Data da última modificação.
+        tests:
+          - not_null
+
+      - name: status
+        description: Status atual do pedido.
+        tests:
+          - not_null
+
+      - name: shipmethod
+        description: Método que o pedido foi transportado.
+        tests:
+          - not_null
+
+      - name: creditcardid
+        description: Identificador único do cartão de crédico.
+        tests:
+          - not_null
+
+      - name: CardType
+        description: Categoria do cartão de crédito.
+        tests:
+          - not_null
+
+      - name: is_orderonline
+        description: Descrição se o pedido foi realizado online.
+        tests:
+          - not_null
