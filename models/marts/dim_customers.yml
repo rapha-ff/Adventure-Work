@@ -21,7 +21,7 @@ models:
           - unique
           
       - name: territoryid
-        description: Chave única que caracteriza o territorio onde o cliente está localizado.
+        description: Chave que caracteriza o territorio onde o cliente está localizado.
         tests:
           - unique
           - not_null

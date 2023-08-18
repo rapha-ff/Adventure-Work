@@ -18,7 +18,6 @@ with
             , salesperson.commissionpct
             , salesperson.salesytd
             , salesperson.saleslastyear
-
             , employee.jobtitle
             , employee.birthdate
             , employee.maritalstatus
