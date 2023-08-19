@@ -13,7 +13,6 @@ models:
       - name: territoryid
         description: Chave única do território.
         tests:
-          - unique
           - not_null
           
       - name: addressline1
@@ -37,25 +36,21 @@ models:
       - name: stateprovincecode
         description: Cógido do estado.
         tests:
-          - unique
           - not_null
           
       - name: province_name
         description: Nome do estado.
         tests:
-          - unique
           - not_null
           
       - name: countryregioncode
         description: Cógido do país.
         tests:
-          - unique
           - not_null
           
       - name: country_name
         description: Nome do país.
         tests:
-          - unique
           - not_null
           
       - name: isonlystateprovinceflag

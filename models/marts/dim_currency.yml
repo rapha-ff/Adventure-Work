@@ -36,7 +36,7 @@ models:
           - not_null
           
       - name: modifieddate
-        description: Data da última modificação
+        description: Data da última modificação.
         tests:
           - not_null
     

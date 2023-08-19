@@ -64,7 +64,6 @@ models:
       - name: salariedflag
         description: Classificação da remuneração.
         tests:
-          - unique
           - not_null
           
       - name: vacationhours

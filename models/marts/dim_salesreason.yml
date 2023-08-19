@@ -1,0 +1,26 @@
+version: 2
+
+models:
+  - name: dim_salesreason
+    description: Dimensão de motivo de venda da Adventure Works.
+    columns:     
+      - name: salesreasonid
+        description: Chave de identificação do motivo da venda.
+        tests:
+          - not_null
+          
+      - name: name
+        description: Descrição do motivo da venda.
+        tests:
+          - not_null
+          
+      - name: reasontype
+        description: Categoria a que pertence o motivo da venda.
+        tests:
+          - not_null
+          
+      - name: modifieddate
+        description: Data da última modificação.
+        tests:
+          - not_null
+    

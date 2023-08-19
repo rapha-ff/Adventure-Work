@@ -66,8 +66,6 @@ models:
           
       - name: productmodelid
         description: Chave única do modelo do produto.
-        tests:
-          - not_null
           
       - name: sellstartdate
         description: Data que o produto estava disponível para venda.

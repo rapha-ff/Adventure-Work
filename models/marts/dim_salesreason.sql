@@ -1,6 +1,10 @@
 with
     salesreason as (
-        select *
+        select 
+            salesreasonid
+            , name
+            , reasontype
+            , modifieddate
         from {{ ref('stg_sap__salesreason') }}
     )
 

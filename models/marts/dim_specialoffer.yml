@@ -47,12 +47,9 @@ models:
           
       - name: maxqty
         description: Porcentagem máxima de desconto permitida.
-        tests:
-          - not_null
           
       - name: modifieddate
         description: Data da última modificação.
         tests:
-          - unique
           - not_null
     

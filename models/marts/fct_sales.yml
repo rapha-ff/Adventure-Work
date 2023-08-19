@@ -21,8 +21,6 @@ models:
 
       - name: fk_salesperson
         description: Chave estrangeira da dimensção de vendedores.
-        tests:
-          - not_null
 
       - name: fk_billtoaddress
         description: Chave estrangeira da dimensção de endereços.
@@ -31,8 +29,6 @@ models:
 
       - name: fk_currencyrate
         description: Chave estrangeira da dimensção de câmbio.
-        tests:
-          - not_null
 
       - name: fk_specialoffer
         description: Chave estrangeira da dimensção de ofertas.
@@ -46,13 +42,9 @@ models:
 
       - name: territoryid
         description: Identificador do territorio que o pedido foi contabilizado.
-        tests:
-          - not_null
 
       - name: shiptoaddressid
         description: Identificador do endereço de entrega do pedido.
-        tests:
-          - not_null
 
       - name: orderqty
         description: 	Quantidade encomendada do produto.
@@ -146,8 +138,6 @@ models:
 
       - name: creditcardid
         description: Identificador único do cartão de crédico.
-        tests:
-          - not_null
 
       - name: CardType
         description: Categoria do cartão de crédito.

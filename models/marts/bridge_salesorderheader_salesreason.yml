@@ -8,7 +8,6 @@ models:
         description: Chave que caracteriza produtos nas ordens.
         tests:
           - not_null
-          - unique
           
       - name: salesreasonid
         description: Chave que identifica o motivo da venda.

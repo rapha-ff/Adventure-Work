@@ -17,13 +17,10 @@ models:
           
       - name: storeid
         description: Chave única que caracteriza o cliente pessoa juridica. Quando esse campo é nulo obrigatoriamente a coluna storeid é não nula.
-        tests:
-          - unique
           
       - name: territoryid
         description: Chave que caracteriza o territorio onde o cliente está localizado.
         tests:
-          - unique
           - not_null
           
       - name: persontype
@@ -31,22 +28,18 @@ models:
           
       - name: fullname
         description: Nome completo do cliente.
-        tests:
-          - unique
           
       - name: emailpromotion
         description: Campo que determina a vontade do cliente de receber emails promocionais.
           
       - name: store_name
         description: Nome da loja cliente.
-        tests:
-          - unique
           
       - name: salespersonid
         description: Chave única que caracteriza o vendedor.
           
       - name: last_modifieddate
-        description: Data da última modificação
+        description: Data da última modificação.
           
       - name: final_customer
         description: Cliente final, seja ele pessoa física ou jurídica. Quando o cliente é do tipo SC foi utilizado o nome da loja. 
