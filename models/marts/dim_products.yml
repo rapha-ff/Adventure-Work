@@ -1,0 +1,87 @@
+version: 2
+
+models:
+  - name: dim_products
+    description: Dimensão de produtos da Adventure Works.
+    columns:     
+      - name: name
+        description: Nome do produto.
+        tests:
+          - unique
+          - not_null
+          
+      - name: productnumber
+        description: Chave única que caracteriza o produto.
+        tests:
+          - unique
+          - not_null
+          
+      - name: makeflag
+        description: Campo que identifica se o produto é comprado (0) ou produzido (1).
+        tests:
+          - not_null
+          
+      - name: daystomanufacture
+        description: Número de dias necessários para produzir o produto.
+        tests:
+          - not_null
+          
+      - name: safetystocklevel
+        description: Valor mínimo de estoque.
+        tests:
+          - not_null
+          
+      - name: reorderpoint
+        description: Nível de estoque que emite uma order de compra.
+        tests:
+          - not_null
+          
+      - name: standardcost
+        description: Custo padrão do produto.
+        tests:
+          - not_null
+          
+      - name: listprice
+        description: Preço do produto.
+        tests:
+          - not_null
+          
+      - name: class
+        description: Tamano do produto, podendo ser Alto (H), Médio (M), Baixo (l).
+          
+      - name: style
+        description: Estilo do produto, podesndo ser masculino (M), feminino (W) ou universal (U)
+          
+      - name: productsubcategoryid
+        description: Subcategoria do produto.
+          
+      - name: name_subcategory
+        description: Nome da subcategoria.
+          
+      - name: productcategoryid
+        description: Categoria do produto.
+          
+      - name: name_category
+        description: Nome da categoria do produto.
+          
+      - name: productmodelid
+        description: Chave única do modelo do produto.
+          
+      - name: sellstartdate
+        description: Data que o produto estava disponível para venda.
+        tests:
+          - not_null
+          
+      - name: sellenddate
+        description: Data que o produto não estava mais disponível para venda.
+          
+      - name: is_continued
+        description: Indicador que mostra se o produto está disponível para venda.
+        tests:
+          - not_null
+          
+      - name: last_modifieddate
+        description: Data da ultima modificação.
+        tests:
+          - not_null
+    

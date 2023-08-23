@@ -1,0 +1,20 @@
+version: 2
+
+models:
+  - name: bridge_salesorderheader_salesreason
+    description: Tabela ponte entre os pedidos e os motivos de venda da Adventure Works.
+    columns:                    
+      - name: hash_salesorderid_productid
+        description: Chave que caracteriza produtos nas ordens.
+        tests:
+          - not_null
+          
+      - name: salesreasonid
+        description: Chave que identifica o motivo da venda.
+        tests:
+          - not_null
+
+      - name: modifieddate
+        description: Data da última modificação.
+        tests:
+          - not_null

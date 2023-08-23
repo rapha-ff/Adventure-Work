@@ -1,0 +1,42 @@
+version: 2
+
+models:
+  - name: dim_currency
+    description: Dimensão de câmbio da Adventure Works.
+    columns:                    
+      - name: currencyrateid
+        description: Chave única do registro do câmbio.
+        tests:
+          - unique
+          - not_null
+          
+      - name: currencyratedate
+        description: Dia que o câmbio foi obtido.
+        tests:
+          - not_null
+          
+      - name: fromcurrencycode
+        description: O câmbio foi convertido a partir do cógido dessa moeda.
+        tests:
+          - not_null
+          
+      - name: tocurrencycode
+        description: O câmbio foi convertido para o do cógido dessa moeda.
+        tests:
+          - not_null
+          
+      - name: averagerate
+        description: Média da taxa de câmbio para esse dia.
+        tests:
+          - not_null
+          
+      - name: endofdayrate
+        description: Valor da taxa de câmbio no final do dia.
+        tests:
+          - not_null
+          
+      - name: modifieddate
+        description: Data da última modificação.
+        tests:
+          - not_null
+    

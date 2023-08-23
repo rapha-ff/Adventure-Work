@@ -1,0 +1,55 @@
+version: 2
+
+models:
+  - name: dim_specialoffer
+    description: Dimensão de ofertas da Adventure Works.
+    columns:     
+      - name: specialofferid
+        description: Chave única dos registros de ofertas.
+        tests:
+          - unique
+          - not_null
+          
+      - name: description
+        description: Descrição do desconto.
+        tests:
+          - not_null
+          
+      - name: discountpct
+        description: Porcentagem de desconto.
+        tests:
+          - not_null
+          
+      - name: type
+        description: Categoria do tipo de desconto.
+        tests:
+          - not_null
+          
+      - name: category
+        description: Grupo ao qual o desconto se aplica, como Revendedor ou Cliente.
+        tests:
+          - not_null
+          
+      - name: startdate
+        description: Data de início do desconto.
+        tests:
+          - not_null
+          
+      - name: enddate
+        description: Data de término do desconto.
+        tests:
+          - not_null
+          
+      - name: minqty
+        description: Porcentagem mínima de desconto permitida.
+        tests:
+          - not_null
+          
+      - name: maxqty
+        description: Porcentagem máxima de desconto permitida.
+          
+      - name: modifieddate
+        description: Data da última modificação.
+        tests:
+          - not_null
+    
